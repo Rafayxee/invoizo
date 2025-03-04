@@ -19,8 +19,8 @@ class HomeScreen extends StatelessWidget {
                 radius: 50,
                 backgroundColor: Colors.grey,
               ),
-              SizedBox(height: 10),
-              Text('Business Logo'),
+              const SizedBox(height: 10),
+              const Text('Business Logo'),
               const SizedBox(height: 20),
               KTextField(
                 controller: TextEditingController(),
