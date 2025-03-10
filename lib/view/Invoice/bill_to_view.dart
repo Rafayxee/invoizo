@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:invoizo/widgets/ktext_field.dart';
 
-class ClientScreen extends StatelessWidget {
-  const ClientScreen({super.key});
+class BillToView extends StatelessWidget {
+  const BillToView({super.key});
 
   @override
   Widget build(BuildContext context) {
