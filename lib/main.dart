@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:invoizo/view/home/home_screen.dart';
+import 'package:invoizo/view/main_screen.dart';
+import 'package:provider/provider.dart';
+
+import 'view_model/main_screen_view_model.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MainScreenViewModel()),
+      ],
+      child: MyApp(),
+    ),
   );
 }
 
@@ -15,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: MainScreen(),
     );
   }
 }
