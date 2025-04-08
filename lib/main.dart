@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invoizo/view/main_screen.dart';
+import 'package:invoizo/view/Invoice/screens/bill_from_view.dart';
 import 'package:provider/provider.dart';
 
 import 'view_model/main_screen_view_model.dart';
@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: BillFromView(),
     );
   }
 }

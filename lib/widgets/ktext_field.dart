@@ -32,7 +32,6 @@ class KTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: keyboard,
-      showCursor: false,
       onTapOutside: (event) => FocusScope.of(context).unfocus(),
       textInputAction: textInputAction,
       onFieldSubmitted: onFieldSubmitted,

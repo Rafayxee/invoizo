@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InvoiceView extends StatelessWidget {
-  const InvoiceView({super.key});
+class InvoiceScreen extends StatelessWidget {
+  const InvoiceScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
