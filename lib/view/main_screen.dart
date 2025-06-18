@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invoizo/view/Invoice/invoice_screen.dart';
+import 'package:invoizo/view/Invoice/new_invoice_screen.dart';
 import 'package:invoizo/view/home/home_screen.dart';
 import 'package:invoizo/view_model/main_screen_view_model.dart';
 import 'package:provider/provider.dart';
@@ -10,8 +11,9 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List screen = [
-      HomeScreen(),
-      InvoiceScreen(),
+      const HomeScreen(),
+      const InvoiceScreen(),
+      const NewInvoiceScreen(),
       Container(color: Colors.red),
       Container(color: Colors.green), // Added for the 4th screen
     ];
@@ -20,21 +22,25 @@ class MainScreen extends StatelessWidget {
 
     // Function to determine icon color based on current index
     Color getIconColor(int index) {
-      return currentScreenIndex == index ? Colors.blue : Colors.black;
+      return currentScreenIndex == index
+          ? const Color(0xFF1C170D)
+          : const Color(0xFF9C854A);
     }
 
     return Scaffold(
       extendBody: true,
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
-        onPressed: () {},
+        onPressed: () {
+          _mainScreenProvider.updateScreenIndex(2);
+        },
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: screen[currentScreenIndex],
       bottomNavigationBar: BottomAppBar(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        color: Colors.red,
+        color: Colors.white,
         shape: const CircularNotchedRectangle(),
         height: 60,
         notchMargin: 5,
@@ -64,19 +70,19 @@ class MainScreen extends StatelessWidget {
             IconButton(
               icon: Icon(
                 Icons.print,
-                color: getIconColor(2),
+                color: getIconColor(3),
               ),
               onPressed: () {
-                _mainScreenProvider.updateScreenIndex(2);
+                _mainScreenProvider.updateScreenIndex(3);
               },
             ),
             IconButton(
               icon: Icon(
                 Icons.people,
-                color: getIconColor(3),
+                color: getIconColor(4),
               ),
               onPressed: () {
-                _mainScreenProvider.updateScreenIndex(3);
+                _mainScreenProvider.updateScreenIndex(4);
               },
             ),
           ],
