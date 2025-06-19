@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:invoizo/view/Invoice/invoice_screen.dart';
 import 'package:invoizo/view/Invoice/new_invoice_screen.dart';
+import 'package:invoizo/view/Invoice/screens/customerDetails.dart';
 import 'package:invoizo/view/home/home_screen.dart';
+import 'package:invoizo/view/settings/settingsScreen.dart';
 import 'package:invoizo/view_model/main_screen_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -14,8 +16,8 @@ class MainScreen extends StatelessWidget {
       const HomeScreen(),
       const InvoiceScreen(),
       const NewInvoiceScreen(),
-      Container(color: Colors.red),
-      Container(color: Colors.green), // Added for the 4th screen
+      const CustomerDetails(),
+      SettingsScreen(), // Added for the 4th screen
     ];
     final _mainScreenProvider = Provider.of<MainScreenViewModel>(context);
     int currentScreenIndex = _mainScreenProvider.fetchCurrentIndex;

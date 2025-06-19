@@ -9,7 +9,6 @@ class NewInvoiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 28.5),
         child: SingleChildScrollView(
@@ -60,7 +59,23 @@ class NewInvoiceScreen extends StatelessWidget {
               const KTextField(
                 hintText: 'Description',
                 textAlign: TextAlign.center,
-              )
+              ),
+              SizedBox(height: 14.h),
+              const Row(
+                children: [
+                  Expanded(
+                    child: KTextField(
+                      hintText: 'Quantity',
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: KTextField(
+                      hintText: 'Price',
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
